@@ -39,26 +39,7 @@ h1 {
   line-height: 1.1;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1.2em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #644536;
-  cursor: pointer;
-  transition: border-color 0.25s;
-  margin-top: 2rem;
-  width: 30%;
-}
-button:hover {
-  border-color: #fb6e2d;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -71,4 +52,24 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.form-alquiler {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  background-color: #FBBB4B;
+  border-radius: 20px;
+}
+
+.form-alquiler input {
+  width: 100%;
+  padding: 0.5em;
+  margin: 0.5em 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  color: #213547;
 }
