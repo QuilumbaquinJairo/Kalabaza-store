@@ -1,0 +1,73 @@
+Rol: programador experto en React con TypeScript
+Contexto: Estoy implementando una aplicación web para un local de alquiler de disfraces, mi aplicación cuenta con vista para realizar los alquileres donde se toman los datos del cliente y de los productos para generar los datos de la factura y generar la orden de alquiler, una vista para que tiene las ordenes que están pendientes de devolución es decir con los datos de los trajes que aun no han sido devueltos al local después de ser alquilados, finalmente también tiene un historial de los trajes alquilados, además también tiene un sistema de login que es la pagina que estoy desarrollando ahora.
+
+Problema: En este mismo instante e implementado la vista de login, en la que quiero por el momento implementar la autorización del sistema, es decir quiero implementar la funcionalidad de login para asegurar mis rutas y autorizar mis componentes, por el momento los datos para poder entrar serán admin admin para usuario y contraseña, las librerías que usaremos son:
+- react-router-doom (para la protección de las rutas)
+- contextAPI (para manejo del estado del usuario logeado)
+- por el momento usaremos localStorage para almacenar los datos de sesión del usuario
+
+Adicional al flujo que te acabo de detallar una vez logeado debemos redirigirnos a una pagina llamada HomePage dentro de la carpeta de Pages, que tenga solo un botón de Logout para poder probar el Logout del sistema, debes seguir principios solid y buenas practicas de programación, la funcion para llevar acabo la comprobación de las credenciales deben estar en su propio archivo y estas reciben las credenciales desde el formulario de mi vista de LoginPage, no debes modificar la vista por el momento solo agrega la funcionalidad que te eh detallado, la librería de react-router-doom esta instalada, si necesitas alguna librería adicional házmelo saber, para dar estilos estoy usando boostrap.
+
+Nueva característica: una vez el usuario se encuentre autenticado dentro de la aplicación el layout debe cambiarse por lo tanto crearemos un layout idéntico al MainLayout.tsx pero este se llamara LoginLayout.tsx y sera usado solo para el login mientras que mis otras paginas usaran el MainLayout, implementa esta lógica sin olvidar seguir las buenas practicas de programación y los principios SOLID.
+
+Nueva característica:
+Ahora vamos a implementar una barra de navegación lateral que sera parte del mainlayout para que sea común a todas las demás vistas, a continuacion te describo la barra lateral y los efectos, este cambio solo se agrega en el mainlayout.
+
+Este es un diseño de una barra de navegación lateral (Sidebar/Drawer), con dos estados principales: expandido y colapsado.
+
+🎨 Especificaciones de Color y Fondo
+Fondo de la Barra: Naranja/Ocre #FBB02D.
+
+Fondo del Contenedor Principal (Fuera de la barra): Negro.
+
+Texto e Íconos (Estado Normal): Marron #644536
+Elemento Seleccionado/Hover (ALQUILAR):
+
+Fondo: Un tono Naranja más #FBBB4B
+
+Texto e Ícono: Marron #644536
+
+Botón de Cierre (X): Marron #644536
+
+📐 Estructura y Elementos (Estado Expandido)
+El diseño es una lista vertical de elementos que incluye una sección de perfil y opciones de navegación. | # | Tipo de Elemento | Texto (Función) | Ícono | Observaciones | | :---: | :---: | :--- | :--- | :--- | | 1 | Cabecera/Perfil | JAIRO QUILUMBAQUIN | Ícono de Usuario/Persona | Parte superior de la barra. | | 2 | Cierre/Toggle | (Ninguno) | Ícono de Cerrar (X) | Esquina superior derecha, controla el estado colapsado. | | --- | --- | --- | --- | Opciones de Navegación | | 3 | Ítem de Menú (Seleccionado) | ALQUILAR | Ícono de Carrito de Compras | Estilo de hover/seleccionado con fondo más claro. | | 4 | Ítem de Menú | PENDIENTES | Ícono de Lista con verificación (Checklist) | Estado normal. | | 5 | Ítem de Menú | ENTREGADOS | Ícono de Verificado (Checkmark) | Estado normal. |
+
+✨ Comportamiento y Efectos
+1. Efecto Hover Personalizado
+Aplicación: Se aplica a todos los Ítems de Menú (ALQUILAR, PENDIENTES, ENTREGADOS).
+
+Descripción: Al pasar el ratón sobre un elemento, su fondo cambia al tono Naranja más claro/Beige. Esto se muestra en el elemento ALQUILAR en el estado actual.
+
+2. Transición a Estado Colapsado (Efecto Acordeón)
+Activación: Presionar el ícono X en la esquina superior.
+
+Transición: La barra realiza una animación de "acordeón" o contracción, que la lleva del Estado Expandido al Estado Colapsado.
+
+Estado Colapsado (Segunda Imagen):
+
+Ancho: El ancho de la barra se reduce drásticamente, quedando solo lo suficiente para mostrar los Íconos de cada elemento.
+
+Contenido:
+
+El texto de la sección de perfil y de los ítems de menú desaparece u oculta.
+
+Los íconos permanecen visibles y centrados verticalmente.
+
+El ícono de Usuario y los íconos de Carrito, Checklist y Checkmark se conservan.
+
+El botón de Cierre (X) probablemente se reemplace por un botón de Apertura (por ejemplo, un ícono de hamburguesa ☰) o simplemente desaparece para que el usuario haga clic en la barra para expandirla de nuevo.
+
+💻 Requisitos de Programación
+Crear un componente Sidebar con fondo Naranja/Ocre.
+
+Implementar dos estados (Expandido y Colapsado) controlados por un toggle.
+
+Asegurar una animación suave (efecto acordeón) para la transición de ancho.
+
+Definir el estilo del MenuItem para incluir ícono y texto.
+
+Implementar el hover personalizado: cambio de color de fondo al tono más claro/beige.
+
+En el estado Colapsado: ocultar todo el texto y mantener el ancho mínimo para mostrar solo los íconos.
+
+Para la implementación de las animaciones podemos usar las utilidades de boostrap y de ser necesario implementar funciones con js y css para darle el efecto deseado, debemos mantener esta implementación lo mas sencillo posible con respecto a complejidad del código para implementarlo.
