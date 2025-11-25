@@ -1,0 +1,24 @@
+.MainLayout{
+    background-color: #FBB02D;
+    height: 100vh;
+    width: 100vw;
+}
+
+.btn-primary{
+    background-color: #4A2616 !important; 
+    border-color: #4A2616 !important;
+}
+
+.btn-primary:hover{
+    background-color: #6E3B24 !important; 
+    border-color: #6E3B24 !important;
+}
+
+.text-brown{
+    color: #4A2616 !important;
+}
+
+.border-brown{
+    border: 1px solid #6E3B24 !important;
+    border-radius: 0.25rem;
+}
