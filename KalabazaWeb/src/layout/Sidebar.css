@@ -1,0 +1,64 @@
+.sidebar {
+  height: 100vh;
+  background: #FBB02D; /* naranja/ocre */
+  color: #644536; /* marron */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  transition: width 300ms ease;
+  box-shadow: 2px 0 6px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.sidebar.expanded { width: 240px; }
+.sidebar.collapsed { width: 72px; }
+
+.sidebar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+}
+
+.profile { display: flex; align-items: center; gap: 10px; }
+.avatar { font-size: 26px; }
+.profile-text { display: flex; flex-direction: column; }
+.profile-text .name { font-weight: 700; font-size: 14px; }
+
+.toggle-btn {
+  background: transparent;
+  border: none;
+  color: #644536;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.menu { display: flex; flex-direction: column; gap: 6px; padding: 8px; margin-top: 8px; }
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: #644536;
+  cursor: pointer;
+  transition: background 150ms ease, transform 120ms ease;
+}
+
+.menu-item .menu-icon { font-size: 20px; width: 28px; text-align: center; }
+.menu-item .menu-text { font-weight: 600; }
+
+.menu-item:hover { background: #FBBB4B; }
+.menu-item.selected { background: #FBBB4B; }
+
+/* Collapsed state: hide text and center icons */
+.sidebar.collapsed .profile-text { display: none; }
+.sidebar.collapsed .menu-text { display: none; }
+.sidebar.collapsed .menu-item { justify-content: center; padding: 12px 0; }
+
+/* Layout outside the sidebar: main content will be black */
+.content-area { background: #000; color: #fff; min-height: 100vh; }
+
+/* Ensure good touch target for toggle */
+.toggle-btn:focus { outline: 2px solid rgba(0,0,0,0.15); }

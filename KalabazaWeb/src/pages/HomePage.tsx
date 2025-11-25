@@ -11,7 +11,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="container mt-5">
+    <div className="container">
       <h2 className="mb-4">Bienvenido{user ? `, ${user.username}` : ''}</h2>
       <button className="btn btn-secondary" onClick={handleLogout}>
         Logout
