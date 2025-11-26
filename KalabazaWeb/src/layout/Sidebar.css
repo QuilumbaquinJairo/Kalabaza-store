@@ -58,7 +58,7 @@
 .sidebar.collapsed .menu-item { justify-content: center; padding: 12px 0; }
 
 /* Layout outside the sidebar: main content will be black */
-.content-area { background: #000; color: #fff; min-height: 100vh; }
+.content-area { background: #fffae3; color: #fff; min-height: 100vh; }
 
 /* Ensure good touch target for toggle */
 .toggle-btn:focus { outline: 2px solid rgba(0,0,0,0.15); }

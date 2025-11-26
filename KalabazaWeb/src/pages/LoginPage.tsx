@@ -17,7 +17,7 @@ export default function LoginPage() {
       e.preventDefault();
       const ok = await login(username, password);
       if (ok) {
-        navigate('/');
+        navigate('/rent');
       } else {
         alert('Credenciales inválidas');
       }

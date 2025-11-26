@@ -3,6 +3,9 @@ import MainLayout from './layout/MainLayout'
 import LoginLayout from './layout/LoginLayout'
 import LoginPage from './pages/LoginPage'
 import HomePage from './pages/HomePage'
+import RentPage from './pages/RentPage'
+import PendingPage from './pages/PendingPage'
+import HistoryPage from './pages/HistoryPage'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { AuthProvider, useAuth } from './context/AuthContext'
 import type { JSX } from 'react'
@@ -25,6 +28,36 @@ function App() {
                 <MainLayout>
                   <ProtectedRoute>
                     <HomePage />
+                  </ProtectedRoute>
+                </MainLayout>
+              }
+            />
+            <Route
+              path="/rent"
+              element={
+                <MainLayout>
+                  <ProtectedRoute>
+                    <RentPage />
+                  </ProtectedRoute>
+                </MainLayout>
+              }
+            />
+            <Route
+              path="/pending"
+              element={
+                <MainLayout>
+                  <ProtectedRoute>
+                    <PendingPage />
+                  </ProtectedRoute>
+                </MainLayout>
+              }
+            />
+            <Route
+              path="/history"
+              element={
+                <MainLayout>
+                  <ProtectedRoute>
+                    <HistoryPage />
                   </ProtectedRoute>
                 </MainLayout>
               }
